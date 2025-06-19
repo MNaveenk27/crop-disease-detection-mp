@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmSecure - Leaf Disease Detection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --primary-dark: #388E3C;
+            --primary-light: #C8E6C9;
+            --accent-color: #FF5722;
+            --text-color: #263238;
+            --text-light: #607D8B;
+            --background-color: #F5F7FA;
+            --white: #FFFFFF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-top: 70px;
+        }
+
+        /* Header and Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+
+        .logo-icon {
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-dark);
+            font-size: 2rem;
+        }
+
+        /* Upload Section */
+        .upload-container {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .upload-area {
+            border: 2px dashed var(--primary-color);
+            border-radius: var(--border-radius);
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 25px;
+            background-color: rgba(76, 175, 80, 0.05);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .upload-area:hover {
+            background-color: rgba(76, 175, 80, 0.1);
+        }
+
+        .upload-area.dragover {
+            background-color: rgba(76, 175, 80, 0.2);
+            border-color: var(--primary-dark);
+        }
+
+        .upload-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .upload-text {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-col {
+            flex: 1;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+
+        /* Results Section */
+        .results-container {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 30px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .results-header {
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .image-container {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .results-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .disease-card {
+            background-color: var(--primary-light);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .disease-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .severity-indicator {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .severity-bar {
+            height: 8px;
+            flex-grow: 1;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-left: 10px;
+        }
+
+        .severity-fill {
+            height: 100%;
+            background-color: var(--accent-color);
+        }
+
+        .treatment-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            margin-top: 15px;
+        }
+
+        .treatment-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .treatment-card ul {
+            padding-left: 20px;
+        }
+
+        .treatment-card li {
+            margin-bottom: 8px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow);
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="{{ url_for('home') }}" class="logo">
+                    <span class="logo-icon">🌿</span>
+                    <span>FarmSecure</span>
+                </a>
+                <button class="hamburger" id="hamburger">☰</button>
+                <div class="nav-links" id="nav-links">
+                    <a href="{{ url_for('home') }}">Home</a>
+                    <a href="{{ url_for('index') }}">Disease Detection</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="page-title">Leaf Disease Detection</h1>
+
+        <section class="upload-container">
+            <form action="/predict" method="POST" enctype="multipart/form-data">
+                <div class="upload-area" id="upload-area">
+                    <div class="upload-icon">📷</div>
+                    <p class="upload-text" id="upload-text">Drag & drop your leaf image or click to browse</p>
+                    <input type="file" id="leafImage" name="leaf_image" accept="image/*" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="areaSize">Crop Area Size (m²)</label>
+                            <input type="number" class="form-control" id="areaSize" name="area_size" min="1" value="100" required>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="treatmentType">Preferred Treatment Type</label>
+                            <select class="form-control" id="treatmentType" name="treatment_type">
+                                <option value="all">All Treatments</option>
+                                <option value="organic">Organic Only</option>
+                                <option value="chemical">Chemical Only</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-block">Analyze Leaf</button>
+            </form>
+        </section>
+
+        {% if prediction %}
+        <section class="results-container">
+            <div class="results-header">
+                <h2>Analysis Results</h2>
+            </div>
+
+            <div class="results-grid">
+                <div class="image-container">
+                    <img src="{{ image_path }}" alt="Uploaded leaf image">
+                </div>
+
+                <div class="results-details">
+                    <div class="disease-card">
+                        <h3 class="disease-name">{{ prediction }}</h3>
+                        
+                        {% if not 'healthy' in prediction.lower() %}
+                        <div class="severity-indicator">
+                            <span><strong>Severity:</strong> {{ severity }}</span>
+                            <div class="severity-bar">
+                                {% if severity == 'Low' %}
+                                <div class="severity-fill" style="width: 25%; background-color: #4CAF50;"></div>
+                                {% elif severity == 'Medium' %}
+                                <div class="severity-fill" style="width: 50%; background-color: #FFC107;"></div>
+                                {% else %}
+                                <div class="severity-fill" style="width: 85%; background-color: #F44336;"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <!-- <p><strong>Affected Area:</strong> {{ damage_percent }}</p> -->
+                        {% else %}
+                        <p>Your plant appears to be healthy!</p>
+                        {% endif %}
+                    </div>
+
+                    <div class="treatment-card">
+                        {{ treatment|safe }}
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endif %}
+    </main>
+
+    <script>
+        // Mobile navigation toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Close mobile nav when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-links') && !e.target.closest('.hamburger') && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                hamburger.textContent = '☰';
+            }
+        });
+
+        // Drag and drop functionality
+        const uploadArea = document.getElementById('upload-area');
+        const fileInput = document.getElementById('leafImage');
+        const uploadText = document.getElementById('upload-text');
+
+        uploadArea.addEventListener('dragenter', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            uploadArea.classList.add('dragover');
+            uploadText.textContent = 'Drop your image here';
+        });
+
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+        });
+
+        uploadArea.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            uploadArea.classList.remove('dragover');
+            uploadText.textContent = 'Drag & drop your leaf image or click to browse';
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            uploadArea.classList.remove('dragover');
+            
+            if (e.dataTransfer.files.length > 0) {
+                fileInput.files = e.dataTransfer.files;
+                uploadText.textContent = `Selected: ${e.dataTransfer.files[0].name}`;
+            }
+        });
+
+        // Click to browse
+        uploadArea.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        // Update text when file selected
+        fileInput.addEventListener('change', () => {
+            if (fileInput.files.length > 0) {
+                uploadText.textContent = `Selected: ${fileInput.files[0].name}`;
+            } else {
+                uploadText.textContent = 'Drag & drop your leaf image or click to browse';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+{
+  "Apple__Apple_scab": [
+    "Apply sulfur fungicide (10 g/L, every 7 days)",
+    "Apply myclobutanil fungicide (1 ml/L, every 10 days)",
+    "Use resistant varieties",
+    "Remove fallen leaves regularly"
+  ],
+  "Apple_Black_rot": [
+    "Apply captan fungicide (30 g/10 L, every 7 days)",
+    "Spray Bordeaux mixture (50 g/10 L, every 14 days)",
+    "Remove infected branches during dry weather",
+    "Clear mummified fruit and fallen leaves weekly"
+  ],
+  "Apple_Cedar_apple_rust": [
+    "Spray sulfur-based fungicide (15 g/L)",
+    "Apply mancozeb or myclobutanil (1 ml/L)",
+    "Use resistant cultivars",
+    "Remove nearby cedar trees"
+  ],
+  "Apple__healthy": [
+    "No treatment needed",
+    "Inspect trees biweekly",
+    "Maintain good air circulation through pruning",
+    "Clean up fallen leaves regularly"
+  ],
+  "Blueberry__healthy": [
+    "Maintain good soil drainage and pH",
+    "Inspect regularly for signs of disease",
+    "Mulch around plants every season",
+    "Avoid overhead watering"
+  ],
+  "Cherry(including_sour)_Powdery_mildew": [
+    "Spray neem oil or potassium bicarbonate (10 ml/L)",
+    "Apply sulfur fungicide (20 g/L)",
+    "Use myclobutanil or triforine (2 ml/L)",
+    "Prune for better air circulation"
+  ],
+  "Corn_(maize)Cercospora_leaf_spot_Gray_leaf_spot": [
+    "Apply azoxystrobin fungicide (15 ml/L)",
+    "Spray compost tea or neem oil (20 ml/L)",
+    "Use resistant hybrids",
+    "Rotate with non-host crops"
+  ],
+  "Corn(maize)_Common_rust": [
+    "Apply propiconazole fungicide (20 ml/L)",
+    "Use sulfur dust or neem spray (15 g/L)",
+    "Plant resistant varieties",
+    "Avoid late-season planting"
+  ],
+  "Corn_(maize)Northern_Leaf_Blight": [
+    "Apply pyraclostrobin fungicide (10 ml/L)",
+    "Rotate crops annually",
+    "Use disease-resistant hybrids",
+    "Remove infected debris after harvest"
+  ],
+  "Grape_Black_rot": [
+    "Apply mancozeb fungicide (25 g/10 L)",
+    "Use sulfur or copper sprays (10 g/L)",
+    "Remove infected mummies and leaves",
+    "Prune for improved air circulation"
+  ],
+  "Grape_Esca(Black_Measles)": [
+    "Remove infected vines in dry weather",
+    "Avoid pruning during wet conditions",
+    "Protect trunk from injuries",
+    "Improve soil health and vine vigor"
+  ],
+  "Grape__Leaf_blight(Isariopsis_Leaf_Spot)": [
+    "Spray neem oil or compost tea (15 ml/L)",
+    "Apply captan or mancozeb fungicide (25 g/10 L)",
+    "Remove infected leaves regularly",
+    "Practice canopy management"
+  ],
+  "Grape___healthy": [
+    "Maintain regular pruning and vine health",
+    "Monitor for disease signs biweekly",
+    "Ensure good airflow in canopy",
+    "Avoid over-irrigation"
+  ],
+  "Orange__Haunglongbing(Citrus_greening)": [
+    "Remove infected trees immediately",
+    "Apply imidacloprid (20 ml/L, every 2 weeks)",
+    "Use biological controls for psyllid vectors",
+    "Plant certified disease-free stock"
+  ],
+  "Peach__Bacterial_spot": [
+    "Use copper sprays (20 g/L, every 10 days)",
+    "Apply oxytetracycline (5 ml/L)",
+    "Plant resistant varieties",
+    "Avoid overhead irrigation"
+  ],
+  "Peach__healthy": [
+    "Prune for air flow and sunlight",
+    "Monitor tree health every 2 weeks",
+    "Apply balanced fertilizer seasonally",
+    "Ensure proper watering and drainage"
+  ],
+  "Pepper,bell_Bacterial_spot": [
+    "Apply copper hydroxide sprays (15 g/L)",
+    "Use bactericides like streptomycin (10 ml/L)",
+    "Plant resistant cultivars",
+    "Avoid wetting foliage during irrigation"
+  ],
+  "Pepper,_bell_healthy": [
+    "Clean tools and soil regularly",
+    "Rotate crops annually",
+    "Ensure proper spacing for airflow",
+    "Inspect weekly for signs of blight"
+  ],
+  "Potato__Early_blight": [
+    "Apply mancozeb or chlorothalonil (30 g/10 L)",
+    "Use neem oil (20 ml/L, every 7 days)",
+    "Remove infected leaves weekly",
+    "Use certified disease-free seed potatoes"
+  ],
+  "Potato__Late_blight": [
+    "Spray metalaxyl (20 ml/L, every 7 days)",
+    "Apply copper fungicide (15 g/L)",
+    "Remove and destroy infected plants",
+    "Avoid using infected tubers for planting"
+  ],
+  "Potato_healthy": [
+    "Practice crop rotation annually",
+    "Ensure good soil drainage",
+    "Use clean, certified seed potatoes",
+    "Monitor foliage weekly"
+  ],
+  "Raspberry_healthy": [
+    "Mulch annually to prevent soil splash",
+    "Use disease-resistant cultivars",
+    "Prune canes for airflow",
+    "Inspect for pests biweekly"
+  ],
+  "Soybean__healthy": [
+    "Rotate crops and avoid monoculture",
+    "Inspect regularly for early symptoms",
+    "Maintain balanced soil nutrients",
+    "Weed regularly to avoid pests"
+  ],
+  "Squash__Powdery_mildew": [
+    "Spray potassium bicarbonate or neem oil (20 ml/L)",
+    "Apply myclobutanil or sulfur dust (30 g/10 L)",
+    "Use resistant varieties",
+    "Ensure plant spacing and airflow"
+  ],
+  "Strawberry_Leaf_scorch": [
+    "Apply copper sprays (20 g/L)",
+    "Use captan fungicide (30 g/10 L)",
+    "Remove infected leaves weekly",
+    "Ensure adequate spacing and sunlight"
+  ],
+  "Strawberry__healthy": [
+    "Mulch with straw to prevent splash",
+    "Inspect for fungal issues biweekly",
+    "Prune runners and old leaves",
+    "Avoid overhead watering"
+  ],
+  "Tomato__Bacterial_spot": [
+    "Use copper-based fungicides (25 g/10 L)",
+    "Avoid overhead irrigation",
+    "Plant resistant varieties",
+    "Rotate crops annually"
+  ],
+  "Tomato_Early_blight": [
+    "Apply mancozeb or chlorothalonil (30 g/10 L)",
+    "Use neem or compost teas (15 ml/L)",
+    "Remove infected foliage weekly",
+    "Avoid wetting leaves during irrigation"
+  ],
+  "Tomato__Late_blight": [
+    "Spray copper fungicides (15 g/L)",
+    "Apply chlorothalonil (30 g/10 L)",
+    "Remove infected plants promptly",
+    "Use resistant tomato varieties"
+  ],
+  "Tomato__Leaf_Mold": [
+    "Apply chlorothalonil fungicide (30 g/10 L)",
+    "Use baking soda spray (30 g/10 L)",
+    "Ensure good ventilation in greenhouses",
+    "Avoid leaf wetness"
+  ],
+  "Tomato_Septoria_leaf_spot": [
+    "Apply copper fungicide (20 g/L)",
+    "Use chlorothalonil (30 g/10 L)",
+    "Remove infected leaves weekly",
+    "Improve air circulation"
+  ],
+  "Tomato__Spider_mites_Two-spotted_spider_mite": [
+    "Apply miticides like bifenthrin (5 ml/L)",
+    "Spray neem oil or insecticidal soap (20 ml/L)",
+    "Introduce predatory mites",
+    "Increase humidity around plants"
+  ],
+  "Tomato__Target_Spot": [
+    "Apply copper fungicides (20 g/L)",
+    "Use chlorothalonil or mancozeb (30 g/10 L)",
+    "Remove infected leaves regularly",
+    "Improve plant ventilation"
+  ],
+  "Tomato__Tomato_Yellow_Leaf_Curl_Virus": [
+    "Remove infected plants immediately",
+    "Apply imidacloprid (10 ml/L, every 14 days)",
+    "Control whiteflies actively",
+    "Use resistant cultivars"
+  ],
+  "Tomato__Tomato_mosaic_virus": [
+    "Remove infected plants promptly",
+    "Rotate crops every year",
+    "Use virus-resistant varieties",
+    "Maintain strict hygiene with tools and hands"
+  ],
+  "Tomato___healthy": [
+    "Stake or cage plants for better airflow",
+    "Rotate crops annually",
+    "Inspect plants regularly",
+    "Avoid excess leaf wetting"
+  ]
+}
